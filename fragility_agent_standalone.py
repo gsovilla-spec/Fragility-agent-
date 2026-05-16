@@ -958,11 +958,9 @@ with st.sidebar:
     st.markdown("**② AI engine (optional)**")
     st.caption("Tabs 4 & 5 use Groq's free LLM API for AI-powered analysis. "
                "A shared key is pre-filled — or get your own free at **groq.com**.")
-    _default_groq_key = st.secrets.get("GROQ_API_KEY", "") if hasattr(st, "secrets") else ""
     anthropic_key = st.text_input("Groq API Key", type="password",
-                                   value=_default_groq_key,
-                                   placeholder="gsk_...",
-                                   help="Used only for Tabs 4 (Hedging Intelligence) and 5 (Scenario Lab). Tabs 1–3 work without any API key. On Streamlit Cloud this is pre-filled from Secrets.")
+                                   value="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",
+                                   help="Used only for Tabs 4 (Hedging Intelligence) and 5 (Scenario Lab). Tabs 1–3 work without any API key.")
     st.caption("Tabs 1–3 (market data, fragility score, stress tests) require no API key.")
 
     st.divider()
@@ -1695,3 +1693,4 @@ st.markdown('<div style="text-align:center;color:#475569;font-size:.78rem">'
             'Data: Yahoo Finance · FRED · AI: Groq (Llama 3.3 70B) · '
             '<b>pip install streamlit yfinance groq scipy plotly</b>'
             '</div>', unsafe_allow_html=True)
+
